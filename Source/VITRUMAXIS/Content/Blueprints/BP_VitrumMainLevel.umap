@@ -1,0 +1,20 @@
+// Enhanced level design:
+// - Add branching paths with optional challenges for rewards (e.g., subroutines)
+// - Include secret areas accessible via clever rotation or state changes
+// - Create multi-layer puzzles combining beams, nodes, and gears across rotations
+// - Add dynamic elements: moving platforms (VitrumMovableBlock with timelines), timed gates
+// - Fix boring spots: Intersperse collectibles, audio logs (via DialogueManager), and mini-challenges in linear sections
+// - Ensure varied pacing: Short flow bursts between solve sections
+
+// Enhanced with:
+- Varied terrain: Hills, ramps, valleys using landscape tools
+- Banked oval track: Circular path with banked curves for high-speed racing/flow testing
+- Fun topology: Loops, jumps, twisty paths integrated with puzzles
+- Marble graphics: Update mesh/material for larger, detailed model (e.g., higher poly, glow effects)
+- Ensure camera centering prevents losing player in large map
+
+// Further enhancements:
+// - Add varied terrain: Hills, ramps, loops using landscape tools or static meshes
+// - Create banked oval race track area: Use spline-based paths with banked curves for high-speed flow testing
+// - Fun topology: Twisty paths, jumps, tunnels to leverage marble momentum
+// - To prevent getting lost: Add auto-centering camera logic in Marble Tick, minimap or waypoints if needed

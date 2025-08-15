@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Configuration xmlns="https://www.unrealengine.com/BuildConfiguration">
+  <BuildConfiguration>
+    <bUseSwarm>false</bUseSwarm>
+    <bAllowRemoteLinking>false</bAllowRemoteLinking>
+    <bUseLocalBuildStorage>true</bUseLocalBuildStorage>
+    <bAllowXGE>false</bAllowXGE>
+  </BuildConfiguration>
+</Configuration>
