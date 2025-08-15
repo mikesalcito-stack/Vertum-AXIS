@@ -1,0 +1,267 @@
+# VITRUM AXIS - Material Specifications
+# AAA-Quality Materials for The Calibration Core
+
+## 1. SURVEY SPHERE MATERIALS
+
+### M_SurveySphere_Base
+- **Type**: PBR Material
+- **Base Color**: Deep blue with metallic sheen (0.1, 0.2, 0.8, 1.0)
+- **Metallic**: 0.8
+- **Roughness**: 0.2
+- **Normal Map**: Subtle surface detail
+- **Emissive**: Soft blue glow (0.2, 0.4, 1.0, 0.3)
+- **Special**: Dynamic damage cracks that appear based on integrity
+
+### M_SurveySphere_Damaged
+- **Type**: Material Instance of M_SurveySphere_Base
+- **Crack Pattern**: Procedural cracks that spread from impact points
+- **Crack Color**: Bright orange/red (1.0, 0.3, 0.1, 1.0)
+- **Crack Emissive**: Pulsing effect (0.8, 0.2, 0.1, 0.5)
+- **Animation**: Cracks pulse and spread over time
+
+### M_SurveySphere_Critical
+- **Type**: Material Instance of M_SurveySphere_Damaged
+- **Crack Intensity**: Maximum (full coverage)
+- **Pulse Speed**: Fast (2Hz)
+- **Warning Effect**: Red flashing overlay
+- **Particle Integration**: Sparks and energy leaks
+
+## 2. ENVIRONMENT MATERIALS
+
+### M_Floor_Calibration
+- **Type**: PBR Material
+- **Base Color**: Dark gray with blue tint (0.1, 0.1, 0.15, 1.0)
+- **Metallic**: 0.1
+- **Roughness**: 0.7
+- **Normal Map**: Subtle geometric patterns
+- **Emissive**: Grid lines (0.2, 0.3, 0.8, 0.1)
+- **Special**: Grid lines pulse with game state
+
+### M_Wall_Calibration
+- **Type**: PBR Material
+- **Base Color**: Medium gray (0.3, 0.3, 0.35, 1.0)
+- **Metallic**: 0.2
+- **Roughness**: 0.6
+- **Normal Map**: Vertical panel lines
+- **Emissive**: Edge highlights (0.4, 0.5, 1.0, 0.2)
+- **Special**: Panels can light up individually
+
+### M_Platform_Calibration
+- **Type**: PBR Material
+- **Base Color**: Light gray (0.6, 0.6, 0.65, 1.0)
+- **Metallic**: 0.3
+- **Roughness**: 0.4
+- **Normal Map**: Clean geometric edges
+- **Emissive**: Edge glow (0.5, 0.6, 1.0, 0.3)
+- **Special**: Glow intensity changes with player proximity
+
+### M_Ramp_Calibration
+- **Type**: Material Instance of M_Platform_Calibration
+- **Directional Flow**: Energy flow lines in movement direction
+- **Flow Speed**: Dynamic based on player speed
+- **Emissive**: Enhanced edge glow
+
+## 3. ALIGNMENT NODE MATERIALS
+
+### M_Node_Base
+- **Type**: PBR Material
+- **Base Color**: Neutral gray (0.5, 0.5, 0.5, 1.0)
+- **Metallic**: 0.5
+- **Roughness**: 0.3
+- **Normal Map**: Geometric symbol patterns
+- **Emissive**: None (inactive state)
+
+### M_Node_Active
+- **Type**: Material Instance of M_Node_Base
+- **Base Color**: Bright blue (0.2, 0.6, 1.0, 1.0)
+- **Emissive**: Strong blue glow (0.3, 0.7, 1.0, 0.8)
+- **Pulse Effect**: Breathing animation
+- **Particle Integration**: Energy particles
+
+### M_Node_Linked
+- **Type**: Material Instance of M_Node_Active
+- **Base Color**: Green (0.2, 0.8, 0.3, 1.0)
+- **Emissive**: Green glow (0.3, 0.9, 0.4, 0.8)
+- **Connection Lines**: Visible energy beams to paired node
+- **Special**: Synchronized pulse with paired node
+
+### M_Node_Completed
+- **Type**: Material Instance of M_Node_Linked
+- **Base Color**: Gold (0.8, 0.6, 0.2, 1.0)
+- **Emissive**: Golden glow (0.9, 0.7, 0.3, 1.0)
+- **Particle Effect**: Celebration particles
+- **Special**: Permanent activation state
+
+## 4. HAZARD MATERIALS
+
+### M_Hazard_AcidPool
+- **Type**: Translucent Material
+- **Base Color**: Toxic green (0.2, 0.8, 0.1, 0.7)
+- **Metallic**: 0.0
+- **Roughness**: 0.1
+- **Normal Map**: Bubbling surface
+- **Emissive**: Toxic glow (0.3, 0.9, 0.2, 0.5)
+- **Animation**: Bubbling and churning
+- **Particle Integration**: Acid bubbles and steam
+
+### M_Hazard_NullZone
+- **Type**: Translucent Material
+- **Base Color**: Dark purple/black (0.1, 0.0, 0.2, 0.8)
+- **Metallic**: 0.0
+- **Roughness**: 0.0
+- **Normal Map**: Distortion patterns
+- **Emissive**: Purple energy (0.4, 0.0, 0.8, 0.6)
+- **Animation**: Reality distortion effect
+- **Particle Integration**: Glitch particles and energy tendrils
+
+### M_Hazard_Stalker
+- **Type**: PBR Material
+- **Base Color**: Dark red (0.3, 0.0, 0.0, 1.0)
+- **Metallic**: 0.7
+- **Roughness**: 0.2
+- **Normal Map**: Organic, threatening patterns
+- **Emissive**: Red eyes (0.8, 0.0, 0.0, 0.8)
+- **Animation**: Threatening pulse
+- **Particle Integration**: Dark energy particles
+
+## 5. ARTISAN SHARD MATERIALS
+
+### M_Shard_Standard
+- **Type**: Translucent Material
+- **Base Color**: Blue crystal (0.2, 0.6, 1.0, 0.8)
+- **Metallic**: 0.3
+- **Roughness**: 0.1
+- **Normal Map**: Crystal facets
+- **Emissive**: Blue glow (0.3, 0.7, 1.0, 0.6)
+- **Animation**: Floating and rotating
+- **Particle Integration**: Energy sparkles
+
+### M_Shard_Rare
+- **Type**: Material Instance of M_Shard_Standard
+- **Base Color**: Purple crystal (0.4, 0.2, 0.8, 0.8)
+- **Emissive**: Purple glow (0.5, 0.3, 0.9, 0.7)
+- **Animation**: Enhanced floating with trail effect
+- **Particle Integration**: Purple energy particles
+
+### M_Shard_Legendary
+- **Type**: Material Instance of M_Shard_Rare
+- **Base Color**: Gold crystal (0.8, 0.6, 0.2, 0.8)
+- **Emissive**: Golden glow (0.9, 0.7, 0.3, 0.8)
+- **Animation**: Complex floating pattern
+- **Particle Integration**: Golden sparkles and energy beams
+
+### M_Shard_Master
+- **Type**: Material Instance of M_Shard_Legendary
+- **Base Color**: Rainbow crystal (dynamic color shift)
+- **Emissive**: Rainbow glow (dynamic)
+- **Animation**: Complex rainbow pattern
+- **Particle Integration**: Rainbow energy particles
+
+## 6. UI MATERIALS
+
+### M_UI_Background
+- **Type**: Translucent Material
+- **Base Color**: Dark blue (0.05, 0.05, 0.1, 0.9)
+- **Emissive**: Subtle blue glow (0.1, 0.1, 0.2, 0.3)
+- **Special**: Grid pattern overlay
+
+### M_UI_Button
+- **Type**: PBR Material
+- **Base Color**: Medium blue (0.2, 0.3, 0.6, 1.0)
+- **Metallic**: 0.2
+- **Roughness**: 0.4
+- **Emissive**: Edge glow (0.3, 0.4, 0.7, 0.4)
+- **Special**: Hover and click effects
+
+### M_UI_ProgressBar
+- **Type**: Material Instance of M_UI_Button
+- **Progress Mask**: Dynamic mask for fill effect
+- **Emissive**: Progress-based glow intensity
+- **Animation**: Smooth fill animation
+
+## 7. EFFECT MATERIALS
+
+### M_Energy_Field
+- **Type**: Translucent Material
+- **Base Color**: Blue energy (0.2, 0.6, 1.0, 0.3)
+- **Emissive**: Strong blue glow (0.3, 0.7, 1.0, 0.8)
+- **Animation**: Energy wave patterns
+- **Particle Integration**: Energy particles
+
+### M_Dash_Trail
+- **Type**: Translucent Material
+- **Base Color**: Blue trail (0.3, 0.7, 1.0, 0.6)
+- **Emissive**: Trail glow (0.4, 0.8, 1.0, 0.8)
+- **Animation**: Fade out over time
+- **Special**: Velocity-based stretching
+
+### M_Traction_Field
+- **Type**: Translucent Material
+- **Base Color**: Green field (0.2, 0.8, 0.3, 0.4)
+- **Emissive**: Green glow (0.3, 0.9, 0.4, 0.6)
+- **Animation**: Ripple effect from center
+- **Special**: Player proximity affects intensity
+
+## 8. LIGHTING MATERIALS
+
+### M_Light_Ambient
+- **Type**: Emissive Material
+- **Base Color**: Blue ambient (0.1, 0.1, 0.2, 1.0)
+- **Emissive**: Ambient glow (0.2, 0.2, 0.4, 0.3)
+- **Special**: Game state affects intensity
+
+### M_Light_Point
+- **Type**: Emissive Material
+- **Base Color**: White light (1.0, 1.0, 1.0, 1.0)
+- **Emissive**: Bright glow (1.0, 1.0, 1.0, 1.0)
+- **Special**: Dynamic intensity and color
+
+## 9. POST-PROCESSING MATERIALS
+
+### M_PostProcess_Flow
+- **Type**: Post-Process Material
+- **Effect**: Motion blur and color grading
+- **Color Grading**: Enhanced blues and contrast
+- **Special**: Activated during Flow state
+
+### M_PostProcess_Solve
+- **Type**: Post-Process Material
+- **Effect**: Sharp focus and analytical overlay
+- **Color Grading**: Neutral with grid overlay
+- **Special**: Activated during Solve state
+
+## 10. PARTICLE MATERIALS
+
+### M_Particle_Energy
+- **Type**: Translucent Material
+- **Base Color**: Blue energy (0.3, 0.7, 1.0, 0.8)
+- **Emissive**: Bright glow (0.4, 0.8, 1.0, 1.0)
+- **Animation**: Fade in/out
+- **Special**: Velocity-based stretching
+
+### M_Particle_Spark
+- **Type**: Translucent Material
+- **Base Color**: White spark (1.0, 1.0, 1.0, 0.9)
+- **Emissive**: Bright white glow (1.0, 1.0, 1.0, 1.0)
+- **Animation**: Quick fade out
+- **Special**: Random rotation and scale
+
+## MATERIAL CREATION GUIDELINES
+
+### Performance Considerations
+- Use Material Instances for variations
+- Optimize texture sizes (1024x1024 max for most)
+- Use texture compression (BC7 for color, BC5 for normal)
+- Minimize material complexity for mobile
+
+### Visual Quality
+- PBR workflow for realistic lighting
+- Proper metallic/roughness values
+- Consistent color palette
+- Dynamic effects for interactivity
+
+### Animation Integration
+- Material parameters for dynamic effects
+- Particle system integration
+- Game state responsiveness
+- Smooth transitions between states

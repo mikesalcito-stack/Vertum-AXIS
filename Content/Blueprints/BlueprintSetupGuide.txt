@@ -1,0 +1,539 @@
+# VITRUM AXIS - Blueprint Setup Guide
+# Complete Blueprint Implementation for AAA-Quality Gameplay
+
+## 1. GAME MODE BLUEPRINT
+
+### BP_VitrumGameMode
+**Parent Class**: VitrumGameMode (C++)
+
+**Key Components**:
+- Game State Manager
+- Timer System
+- Audio Manager
+- Level Manager Reference
+
+**Essential Functions**:
+```
+Event BeginPlay:
+- Initialize Game State (Flow)
+- Start Level Timer
+- Set up Audio System
+- Get Level Manager Reference
+
+Event Tick:
+- Update Timer Display
+- Check for Game State Changes
+- Update Audio Based on State
+
+Input Functions:
+- RotateWorldLeft (Q key)
+- RotateWorldRight (E key)
+- ResetRotation (R key)
+- PauseGame (P key)
+- RestartLevel (F5 key)
+```
+
+**Blueprint Variables**:
+- Current Game State (Enum)
+- Current World Rotation (Enum)
+- Level Timer (Float)
+- Music Components (Array)
+- Audio Cues (Struct)
+
+## 2. PLAYER CHARACTER BLUEPRINT
+
+### BP_VitrumMarble
+**Parent Class**: VitrumMarble (C++)
+
+**Key Components**:
+- Static Mesh (Sphere)
+- Physics Body
+- Spring Arm
+- Camera
+- Audio Components
+- Particle Systems
+
+**Essential Functions**:
+```
+Event BeginPlay:
+- Initialize Physics Properties
+- Set up Input Bindings
+- Create Dynamic Materials
+- Initialize Audio Components
+
+Event Tick:
+- Update Visual Effects
+- Update Audio Based on Movement
+- Check for Damage States
+
+Input Functions:
+- MoveForward (W/S keys)
+- MoveRight (A/D keys)
+- Jump (Space)
+- Dash (Shift)
+- ActivateTractionField (Ctrl)
+- DeactivateTractionField (Ctrl release)
+```
+
+**Blueprint Variables**:
+- Movement Force (Float)
+- Jump Force (Float)
+- Dash Force (Float)
+- Energy (Float)
+- Integrity (Float)
+- Current State (Enum)
+
+**Material Instances**:
+- M_SurveySphere_Base
+- M_SurveySphere_Damaged
+- M_SurveySphere_Critical
+
+## 3. WORLD MANAGER BLUEPRINT
+
+### BP_VitrumWorldManager
+**Parent Class**: VitrumWorldManager (C++)
+
+**Key Components**:
+- World Root (Scene Component)
+- Rotation Controller
+- Actor Registry
+
+**Essential Functions**:
+```
+Event BeginPlay:
+- Initialize World Root
+- Set up Rotation Properties
+- Register with Game Mode
+
+Event Tick:
+- Update Rotation Interpolation
+- Apply Rotation to Registered Actors
+
+Rotation Functions:
+- RotateWorldLeft (90 degrees)
+- RotateWorldRight (90 degrees)
+- SetWorldRotation (Specific angle)
+- CompleteRotation (Event)
+```
+
+**Blueprint Variables**:
+- Rotation Speed (Float)
+- Rotation Duration (Float)
+- Current Rotation (Rotator)
+- Target Rotation (Rotator)
+- Is Rotating (Boolean)
+
+## 4. ALIGNMENT NODE BLUEPRINT
+
+### BP_VitrumAlignmentNode
+**Parent Class**: VitrumAlignmentNode (C++)
+
+**Key Components**:
+- Collision Sphere
+- Node Mesh
+- Symbol Mesh
+- Particle Systems
+- Audio Components
+
+**Essential Functions**:
+```
+Event BeginPlay:
+- Set up Dynamic Materials
+- Initialize Node State
+- Bind Overlap Events
+
+Event Tick:
+- Update Visual Effects
+- Update Pulse Animation
+
+State Functions:
+- ActivateNode
+- LinkNode
+- CompleteNode
+- ResetNode
+
+Overlap Events:
+- OnBeginOverlap (Player)
+- OnEndOverlap (Player)
+```
+
+**Blueprint Variables**:
+- Node Symbol (Enum)
+- Node State (Enum)
+- Paired Node Reference
+- Pulse Speed (Float)
+- Pulse Intensity (Float)
+
+**Material Instances**:
+- M_Node_Base
+- M_Node_Active
+- M_Node_Linked
+- M_Node_Completed
+
+## 5. HAZARD BLUEPRINT
+
+### BP_VitrumHazard
+**Parent Class**: VitrumHazard (C++)
+
+**Key Components**:
+- Hazard Mesh
+- Trigger Sphere
+- Particle Systems
+- Audio Components
+
+**Essential Functions**:
+```
+Event BeginPlay:
+- Set up Hazard Type
+- Initialize Materials
+- Bind Overlap Events
+
+Event Tick:
+- Update Visual Effects
+- Update Movement (Stalkers)
+- Update Pulse Animation
+
+Hazard Functions:
+- ActivateHazard
+- DeactivateHazard
+- TriggerHazard
+- ApplyDamage
+
+Overlap Events:
+- OnBeginOverlap (Player)
+- OnEndOverlap (Player)
+```
+
+**Blueprint Variables**:
+- Hazard Type (Enum)
+- Hazard State (Enum)
+- Damage Amount (Float)
+- Movement Speed (Float)
+- Detection Radius (Float)
+
+**Material Instances**:
+- M_Hazard_AcidPool
+- M_Hazard_NullZone
+- M_Hazard_Stalker
+
+## 6. ARTISAN SHARD BLUEPRINT
+
+### BP_VitrumArtisanShard
+**Parent Class**: VitrumArtisanShard (C++)
+
+**Key Components**:
+- Shard Mesh
+- Collision Sphere
+- Particle Systems
+- Audio Components
+
+**Essential Functions**:
+```
+Event BeginPlay:
+- Initialize Shard Properties
+- Set up Dynamic Materials
+- Start Idle Animation
+- Initialize Audio
+
+Event Tick:
+- Update Rotation
+- Update Bobbing
+- Update Pulse
+- Update Audio Distance
+
+Collection Functions:
+- CollectShard
+- ConsumeShard
+- ResetShard
+
+Overlap Events:
+- OnBeginOverlap (Player)
+```
+
+**Blueprint Variables**:
+- Shard Type (Enum)
+- Shard State (Enum)
+- Shard Index (Integer)
+- Rotation Speed (Float)
+- Bob Speed (Float)
+- Bob Height (Float)
+
+**Material Instances**:
+- M_Shard_Standard
+- M_Shard_Rare
+- M_Shard_Legendary
+- M_Shard_Master
+
+## 7. HUD BLUEPRINTS
+
+### BP_FlowHUD
+**Parent Class**: User Widget
+
+**Key Components**:
+- Timer Display
+- Integrity Bar
+- Energy Bar
+- World Rotation Indicator
+- Minimap
+
+**Essential Functions**:
+```
+Event Construct:
+- Initialize UI Elements
+- Bind to Game Mode Events
+
+Update Functions:
+- UpdateTimerDisplay
+- UpdateIntegrityDisplay
+- UpdateEnergyDisplay
+- UpdateWorldRotationDisplay
+- UpdateMinimap
+```
+
+**Blueprint Variables**:
+- Timer Text (Text Block)
+- Integrity Bar (Progress Bar)
+- Energy Bar (Progress Bar)
+- Rotation Indicator (Image)
+- Minimap (Image)
+
+### BP_SolveHUD
+**Parent Class**: User Widget
+
+**Key Components**:
+- Puzzle Elements Display
+- Node Status
+- Hint System
+- Analytical Overlay
+
+**Essential Functions**:
+```
+Event Construct:
+- Initialize Puzzle UI
+- Set up Hint System
+
+Update Functions:
+- UpdateNodeStatus
+- UpdatePuzzleProgress
+- ShowHints
+- UpdateAnalyticalOverlay
+```
+
+### BP_WorldMapHUD
+**Parent Class**: User Widget
+
+**Key Components**:
+- World Map Display
+- Level Nodes
+- Connection Lines
+- Progress Indicators
+
+**Essential Functions**:
+```
+Event Construct:
+- Initialize Map Display
+- Create Level Nodes
+- Draw Connection Lines
+
+Interaction Functions:
+- SelectLevel
+- ZoomIn
+- ZoomOut
+- NavigateMap
+```
+
+## 8. LEVEL BLUEPRINTS
+
+### BP_Level_Base
+**Parent Class**: Level Blueprint
+
+**Key Components**:
+- Level Geometry
+- Lighting Setup
+- Gameplay Elements
+- Audio Ambience
+
+**Essential Functions**:
+```
+Event BeginPlay:
+- Spawn Level Geometry
+- Set up Lighting
+- Spawn Gameplay Elements
+- Initialize Audio
+
+Event EndPlay:
+- Clean up Level
+- Save Progress
+```
+
+**Level-Specific Blueprints**:
+- BP_Level_W1_L1_Awakening
+- BP_Level_W1_L2_FirstSteps
+- BP_Level_W1_L3_Momentum
+- BP_Level_W1_L4_TheShift
+- BP_Level_W1_L5_HiddenPath
+- BP_Level_W1_L6_PerspectiveMastery
+- BP_Level_W1_L7_TheForge
+- BP_Level_W1_L8_CoreAccess
+- BP_Level_W1_L9_TheConvergence
+- BP_Level_W1_L10_TheCalibration
+
+## 9. PARTICLE SYSTEM BLUEPRINTS
+
+### PS_Energy_Field
+**Type**: Niagara System
+**Material**: M_Particle_Energy
+**Behavior**: Energy field particles
+**Integration**: Traction Field effect
+
+### PS_Dash_Trail
+**Type**: Niagara System
+**Material**: M_Dash_Trail
+**Behavior**: Velocity-based trail
+**Integration**: Dash ability
+
+### PS_Node_Activation
+**Type**: Niagara System
+**Material**: M_Particle_Spark
+**Behavior**: Burst effect
+**Integration**: Alignment Node activation
+
+### PS_Shard_Collection
+**Type**: Niagara System
+**Material**: M_Particle_Energy
+**Behavior**: Collection burst
+**Integration**: Artisan Shard collection
+
+## 10. AUDIO BLUEPRINTS
+
+### BP_AudioManager
+**Parent Class**: Actor
+
+**Key Components**:
+- Audio Components (Array)
+- Music System
+- SFX System
+- Ambient System
+
+**Essential Functions**:
+```
+Event BeginPlay:
+- Initialize Audio Systems
+- Set up Music Tracks
+- Initialize SFX Library
+
+State Functions:
+- PlayFlowMusic
+- PlaySolveMusic
+- PlayPauseMusic
+- PlayGameOverMusic
+
+Effect Functions:
+- PlayRotationSound
+- PlayCollectionSound
+- PlayDamageSound
+- PlayVictorySound
+```
+
+## 11. UI BLUEPRINTS
+
+### BP_MainMenu
+**Parent Class**: User Widget
+
+**Key Components**:
+- Start Game Button
+- Continue Button
+- Settings Button
+- Quit Button
+
+### BP_PauseMenu
+**Parent Class**: User Widget
+
+**Key Components**:
+- Resume Button
+- Settings Button
+- World Map Button
+- Quit to Menu Button
+
+### BP_SettingsMenu
+**Parent Class**: User Widget
+
+**Key Components**:
+- Graphics Settings
+- Audio Settings
+- Control Settings
+- Performance Settings
+
+## 12. BLUEPRINT CONNECTIONS
+
+### Input System Setup
+1. Create Input Mapping Context
+2. Bind Input Actions to Functions
+3. Set up Enhanced Input System
+4. Configure Input Priorities
+
+### Event System Setup
+1. Create Custom Events
+2. Set up Event Dispatchers
+3. Bind Events to Functions
+4. Configure Event Broadcasting
+
+### Material System Setup
+1. Create Material Instances
+2. Set up Dynamic Material Parameters
+3. Configure Material Animation
+4. Link to Blueprint Variables
+
+### Audio System Setup
+1. Create Audio Components
+2. Set up Audio Cues
+3. Configure Spatial Audio
+4. Link to Game Events
+
+## 13. PERFORMANCE OPTIMIZATION
+
+### Blueprint Optimization
+- Use Event Tick sparingly
+- Optimize material instances
+- Minimize dynamic casts
+- Use efficient data structures
+
+### Memory Management
+- Clean up references
+- Use object pooling
+- Optimize texture streaming
+- Manage audio memory
+
+### Rendering Optimization
+- Use LOD systems
+- Optimize particle counts
+- Use occlusion culling
+- Minimize draw calls
+
+## 14. TESTING AND DEBUGGING
+
+### Debug Blueprints
+- Create debug widgets
+- Add logging systems
+- Set up performance monitors
+- Create test scenarios
+
+### Quality Assurance
+- Test all input systems
+- Verify material effects
+- Check audio integration
+- Validate performance targets
+
+## 15. DEPLOYMENT PREPARATION
+
+### Final Setup
+- Optimize all blueprints
+- Test on target platforms
+- Validate all systems
+- Create build configurations
+
+### Documentation
+- Document all blueprints
+- Create user guides
+- Set up version control
+- Prepare release notes

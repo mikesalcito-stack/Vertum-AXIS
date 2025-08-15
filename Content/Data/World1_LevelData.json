@@ -1,0 +1,367 @@
+{
+  "World1": {
+    "WorldName": "The Calibration Core",
+    "WorldDescription": "A world of clean lines, stark geometry, and raw energy. The foundational layer of the Manifold.",
+    "Levels": {
+      "W1_L1": {
+        "LevelName": "Awakening",
+        "LevelType": "Tutorial",
+        "Description": "The first moments of consciousness. Learn basic movement and physics.",
+        "TargetTime": 30.0,
+        "Difficulty": 1,
+        "Geometry": {
+          "FloorSize": [800, 600],
+          "WallHeight": 200,
+          "Platforms": [
+            {"Position": [0, 0, 50], "Size": [200, 200, 20]},
+            {"Position": [300, 0, 100], "Size": [150, 150, 20]},
+            {"Position": [500, 0, 150], "Size": [100, 100, 20]}
+          ]
+        },
+        "GameplayElements": {
+          "PlayerSpawn": [0, 0, 100],
+          "LevelExit": [700, 0, 200],
+          "AlignmentNodes": [],
+          "Hazards": [],
+          "ArtisanShards": [],
+          "Checkpoints": []
+        },
+        "Atmosphere": {
+          "AmbientColor": [0.1, 0.1, 0.2],
+          "LightIntensity": 0.3,
+          "SkyColor": [0.5, 0.5, 0.8]
+        }
+      },
+      "W1_L2": {
+        "LevelName": "First Steps",
+        "LevelType": "Tutorial",
+        "Description": "Master the basics of momentum and physics.",
+        "TargetTime": 45.0,
+        "Difficulty": 1,
+        "Geometry": {
+          "FloorSize": [1000, 800],
+          "WallHeight": 200,
+          "Platforms": [
+            {"Position": [0, 0, 50], "Size": [200, 200, 20]},
+            {"Position": [250, 0, 100], "Size": [150, 150, 20]},
+            {"Position": [450, 0, 150], "Size": [150, 150, 20]},
+            {"Position": [650, 0, 200], "Size": [150, 150, 20]}
+          ],
+          "Ramps": [
+            {"Start": [200, 0, 50], "End": [250, 0, 100], "Width": 100}
+          ]
+        },
+        "GameplayElements": {
+          "PlayerSpawn": [0, 0, 100],
+          "LevelExit": [850, 0, 250],
+          "AlignmentNodes": [],
+          "Hazards": [],
+          "ArtisanShards": [],
+          "Checkpoints": [{"Position": [450, 0, 170]}]
+        },
+        "Atmosphere": {
+          "AmbientColor": [0.1, 0.1, 0.2],
+          "LightIntensity": 0.4,
+          "SkyColor": [0.5, 0.5, 0.8]
+        }
+      },
+      "W1_L3": {
+        "LevelName": "Momentum",
+        "LevelType": "Flow",
+        "Description": "Harness the power of momentum and collect your first Artisan Shard.",
+        "TargetTime": 60.0,
+        "Difficulty": 2,
+        "Geometry": {
+          "FloorSize": [1200, 1000],
+          "WallHeight": 200,
+          "Platforms": [
+            {"Position": [0, 0, 50], "Size": [200, 200, 20]},
+            {"Position": [300, 0, 100], "Size": [150, 150, 20]},
+            {"Position": [500, 0, 150], "Size": [150, 150, 20]},
+            {"Position": [700, 0, 200], "Size": [150, 150, 20]},
+            {"Position": [900, 0, 250], "Size": [150, 150, 20]}
+          ],
+          "Ramps": [
+            {"Start": [200, 0, 50], "End": [300, 0, 100], "Width": 100},
+            {"Start": [400, 0, 100], "End": [500, 0, 150], "Width": 100},
+            {"Start": [600, 0, 150], "End": [700, 0, 200], "Width": 100},
+            {"Start": [800, 0, 200], "End": [900, 0, 250], "Width": 100}
+          ]
+        },
+        "GameplayElements": {
+          "PlayerSpawn": [0, 0, 100],
+          "LevelExit": [1050, 0, 300],
+          "AlignmentNodes": [],
+          "Hazards": [],
+          "ArtisanShards": [{"Position": [900, 0, 270], "Type": "Standard", "Index": 1}],
+          "Checkpoints": [{"Position": [500, 0, 170]}]
+        },
+        "Atmosphere": {
+          "AmbientColor": [0.1, 0.1, 0.2],
+          "LightIntensity": 0.5,
+          "SkyColor": [0.5, 0.5, 0.8]
+        }
+      },
+      "W1_L4": {
+        "LevelName": "The Shift",
+        "LevelType": "Tutorial",
+        "Description": "Discover the power of perspective shifting.",
+        "TargetTime": 75.0,
+        "Difficulty": 2,
+        "Geometry": {
+          "FloorSize": [1000, 1000],
+          "WallHeight": 200,
+          "Platforms": [
+            {"Position": [0, 0, 50], "Size": [200, 200, 20]},
+            {"Position": [300, 0, 100], "Size": [150, 150, 20]},
+            {"Position": [600, 0, 150], "Size": [150, 150, 20]},
+            {"Position": [800, 0, 200], "Size": [150, 150, 20]}
+          ],
+          "HiddenPlatforms": [
+            {"Position": [450, 0, 100], "Size": [150, 150, 20], "Rotation": 90}
+          ]
+        },
+        "GameplayElements": {
+          "PlayerSpawn": [0, 0, 100],
+          "LevelExit": [850, 0, 250],
+          "AlignmentNodes": [
+            {"Position": [300, 0, 120], "Symbol": "Circle", "PairedWith": "W1_L4_Node2"},
+            {"Position": [600, 0, 170], "Symbol": "Circle", "PairedWith": "W1_L4_Node1"}
+          ],
+          "Hazards": [],
+          "ArtisanShards": [],
+          "Checkpoints": [{"Position": [300, 0, 120]}]
+        },
+        "Atmosphere": {
+          "AmbientColor": [0.1, 0.1, 0.2],
+          "LightIntensity": 0.4,
+          "SkyColor": [0.5, 0.5, 0.8]
+        }
+      },
+      "W1_L5": {
+        "LevelName": "Hidden Path",
+        "LevelType": "Flow",
+        "Description": "Secret areas await those who master the Dash ability.",
+        "TargetTime": 90.0,
+        "Difficulty": 3,
+        "Geometry": {
+          "FloorSize": [1200, 800],
+          "WallHeight": 200,
+          "Platforms": [
+            {"Position": [0, 0, 50], "Size": [200, 200, 20]},
+            {"Position": [300, 0, 100], "Size": [150, 150, 20]},
+            {"Position": [600, 0, 150], "Size": [150, 150, 20]},
+            {"Position": [900, 0, 200], "Size": [150, 150, 20]}
+          ],
+          "SecretPlatforms": [
+            {"Position": [450, 0, 100], "Size": [100, 100, 20], "RequiresDash": true},
+            {"Position": [750, 0, 150], "Size": [100, 100, 20], "RequiresDash": true}
+          ]
+        },
+        "GameplayElements": {
+          "PlayerSpawn": [0, 0, 100],
+          "LevelExit": [1050, 0, 250],
+          "AlignmentNodes": [],
+          "Hazards": [],
+          "ArtisanShards": [{"Position": [750, 0, 170], "Type": "Rare", "Index": 2}],
+          "Checkpoints": [{"Position": [600, 0, 170]}]
+        },
+        "Atmosphere": {
+          "AmbientColor": [0.1, 0.1, 0.2],
+          "LightIntensity": 0.5,
+          "SkyColor": [0.5, 0.5, 0.8]
+        }
+      },
+      "W1_L6": {
+        "LevelName": "Perspective Mastery",
+        "LevelType": "Solve",
+        "Description": "Advanced perspective puzzles challenge your spatial reasoning.",
+        "TargetTime": 120.0,
+        "Difficulty": 4,
+        "Geometry": {
+          "FloorSize": [1000, 1000],
+          "WallHeight": 200,
+          "Platforms": [
+            {"Position": [0, 0, 50], "Size": [200, 200, 20]},
+            {"Position": [300, 0, 100], "Size": [150, 150, 20]},
+            {"Position": [600, 0, 150], "Size": [150, 150, 20]},
+            {"Position": [800, 0, 200], "Size": [150, 150, 20]}
+          ],
+          "MultiViewPlatforms": [
+            {"Position": [450, 0, 100], "Size": [150, 150, 20], "VisibleFrom": [0, 90, 180, 270]}
+          ]
+        },
+        "GameplayElements": {
+          "PlayerSpawn": [0, 0, 100],
+          "LevelExit": [850, 0, 250],
+          "AlignmentNodes": [
+            {"Position": [300, 0, 120], "Symbol": "Triangle", "PairedWith": "W1_L6_Node2"},
+            {"Position": [600, 0, 170], "Symbol": "Triangle", "PairedWith": "W1_L6_Node1"},
+            {"Position": [450, 0, 120], "Symbol": "Square", "PairedWith": "W1_L6_Node4"},
+            {"Position": [750, 0, 170], "Symbol": "Square", "PairedWith": "W1_L6_Node3"}
+          ],
+          "Hazards": [],
+          "ArtisanShards": [],
+          "Checkpoints": [{"Position": [450, 0, 120}]
+        },
+        "Atmosphere": {
+          "AmbientColor": [0.1, 0.1, 0.2],
+          "LightIntensity": 0.4,
+          "SkyColor": [0.5, 0.5, 0.8]
+        }
+      },
+      "W1_L7": {
+        "LevelName": "The Forge",
+        "LevelType": "Flow",
+        "Description": "Hazards test your Traction Field mastery.",
+        "TargetTime": 100.0,
+        "Difficulty": 4,
+        "Geometry": {
+          "FloorSize": [1200, 800],
+          "WallHeight": 200,
+          "Platforms": [
+            {"Position": [0, 0, 50], "Size": [200, 200, 20]},
+            {"Position": [300, 0, 100], "Size": [150, 150, 20]},
+            {"Position": [600, 0, 150], "Size": [150, 150, 20]},
+            {"Position": [900, 0, 200], "Size": [150, 150, 20]}
+          ],
+          "HazardZones": [
+            {"Position": [450, 0, 0], "Size": [100, 100, 50], "Type": "AcidPool"},
+            {"Position": [750, 0, 0], "Size": [100, 100, 50], "Type": "NullZone"}
+          ]
+        },
+        "GameplayElements": {
+          "PlayerSpawn": [0, 0, 100],
+          "LevelExit": [1050, 0, 250],
+          "AlignmentNodes": [],
+          "Hazards": [
+            {"Position": [450, 0, 25], "Type": "AcidPool", "Damage": 10},
+            {"Position": [750, 0, 25], "Type": "NullZone", "Damage": 20}
+          ],
+          "ArtisanShards": [{"Position": [900, 0, 220], "Type": "Legendary", "Index": 3}],
+          "Checkpoints": [{"Position": [600, 0, 170}]
+        },
+        "Atmosphere": {
+          "AmbientColor": [0.2, 0.1, 0.1],
+          "LightIntensity": 0.6,
+          "SkyColor": [0.6, 0.3, 0.3]
+        }
+      },
+      "W1_L8": {
+        "LevelName": "Core Access",
+        "LevelType": "Solve",
+        "Description": "Final puzzle preparation for the convergence.",
+        "TargetTime": 150.0,
+        "Difficulty": 5,
+        "Geometry": {
+          "FloorSize": [1000, 1000],
+          "WallHeight": 200,
+          "Platforms": [
+            {"Position": [0, 0, 50], "Size": [200, 200, 20]},
+            {"Position": [300, 0, 100], "Size": [150, 150, 20]},
+            {"Position": [600, 0, 150], "Size": [150, 150, 20]},
+            {"Position": [800, 0, 200], "Size": [150, 150, 20]}
+          ],
+          "ComplexPuzzleElements": [
+            {"Position": [450, 0, 100], "Type": "SokobanBlock", "Movable": true},
+            {"Position": [750, 0, 150], "Type": "EnergyConduit", "Active": false}
+          ]
+        },
+        "GameplayElements": {
+          "PlayerSpawn": [0, 0, 100],
+          "LevelExit": [850, 0, 250],
+          "AlignmentNodes": [
+            {"Position": [300, 0, 120], "Symbol": "Hexagon", "PairedWith": "W1_L8_Node2"},
+            {"Position": [600, 0, 170], "Symbol": "Hexagon", "PairedWith": "W1_L8_Node1"}
+          ],
+          "Hazards": [],
+          "ArtisanShards": [],
+          "Checkpoints": [{"Position": [450, 0, 120}]
+        },
+        "Atmosphere": {
+          "AmbientColor": [0.1, 0.1, 0.2],
+          "LightIntensity": 0.5,
+          "SkyColor": [0.5, 0.5, 0.8]
+        }
+      },
+      "W1_L9": {
+        "LevelName": "The Convergence",
+        "LevelType": "Boss",
+        "Description": "All mechanics converge in the ultimate challenge.",
+        "TargetTime": 180.0,
+        "Difficulty": 6,
+        "Geometry": {
+          "FloorSize": [1200, 1200],
+          "WallHeight": 200,
+          "Platforms": [
+            {"Position": [0, 0, 50], "Size": [200, 200, 20]},
+            {"Position": [300, 0, 100], "Size": [150, 150, 20]},
+            {"Position": [600, 0, 150], "Size": [150, 150, 20]},
+            {"Position": [900, 0, 200], "Size": [150, 150, 20]}
+          ],
+          "BossArena": {
+            "Center": [600, 600, 100],
+            "Radius": 300,
+            "Height": 200
+          }
+        },
+        "GameplayElements": {
+          "PlayerSpawn": [0, 0, 100],
+          "LevelExit": [1050, 1050, 250],
+          "AlignmentNodes": [
+            {"Position": [300, 300, 120], "Symbol": "Octagon", "PairedWith": "W1_L9_Node2"},
+            {"Position": [900, 900, 170], "Symbol": "Octagon", "PairedWith": "W1_L9_Node1"}
+          ],
+          "Hazards": [
+            {"Position": [600, 600, 25], "Type": "Stalker", "Damage": 15}
+          ],
+          "ArtisanShards": [],
+          "Checkpoints": [{"Position": [600, 600, 120}]
+        },
+        "Atmosphere": {
+          "AmbientColor": [0.2, 0.2, 0.3],
+          "LightIntensity": 0.7,
+          "SkyColor": [0.6, 0.6, 0.9]
+        }
+      },
+      "W1_L10": {
+        "LevelName": "The Calibration",
+        "LevelType": "Boss",
+        "Description": "Complete the calibration and unlock the next world.",
+        "TargetTime": 200.0,
+        "Difficulty": 7,
+        "Geometry": {
+          "FloorSize": [1000, 1000],
+          "WallHeight": 200,
+          "Platforms": [
+            {"Position": [0, 0, 50], "Size": [200, 200, 20]},
+            {"Position": [300, 0, 100], "Size": [150, 150, 20]},
+            {"Position": [600, 0, 150], "Size": [150, 150, 20]},
+            {"Position": [800, 0, 200], "Size": [150, 150, 20]}
+          ],
+          "FinalArena": {
+            "Center": [500, 500, 100],
+            "Radius": 250,
+            "Height": 200
+          }
+        },
+        "GameplayElements": {
+          "PlayerSpawn": [0, 0, 100],
+          "LevelExit": [850, 850, 250],
+          "AlignmentNodes": [
+            {"Position": [300, 300, 120], "Symbol": "Master", "PairedWith": "W1_L10_Node2"},
+            {"Position": [700, 700, 170], "Symbol": "Master", "PairedWith": "W1_L10_Node1"}
+          ],
+          "Hazards": [],
+          "ArtisanShards": [],
+          "Checkpoints": [{"Position": [500, 500, 120}]
+        },
+        "Atmosphere": {
+          "AmbientColor": [0.3, 0.3, 0.4],
+          "LightIntensity": 0.8,
+          "SkyColor": [0.7, 0.7, 1.0]
+        }
+      }
+    }
+  }
+}
